@@ -1,0 +1,9 @@
+name: Model Training
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  model-training:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
