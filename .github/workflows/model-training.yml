@@ -26,3 +26,4 @@ jobs:
           # See documentation at: https://github.com/marketplace/actions/upload-a-build-artifact
           name: baummethoden.pickle
           path: models/baummethoden.pickle
+      - run: pytest
