@@ -1,0 +1,19 @@
+name: Model Training
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+jobs:
+  model-training:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - run: pip install -r requirements.txt
+      - run: python src/train.py
+      - uses: actions/upload-artifact@v4
+        with:
+          # See documentation at: https://github.com/marketplace/actions/upload-a-build-artifact
+          name: baummethoden.pickle
+          path: models/baummethoden.pickle
