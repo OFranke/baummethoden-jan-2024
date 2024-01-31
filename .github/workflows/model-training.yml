@@ -1,7 +1,7 @@
 name: Model Training
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, reopened, synchronize]
 jobs:
   model-training:
     runs-on: ubuntu-latest
