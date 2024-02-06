@@ -1,8 +1,10 @@
 from flask import Flask, Response, request
 import pandas as pd
 import pickle
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 file_to_open = open("models/baummethoden.pickle", "rb")
 trained_model = pickle.load(file_to_open)
