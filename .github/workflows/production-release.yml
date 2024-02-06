@@ -2,7 +2,7 @@ name: Deploy to Production
 on:
   push:
     branches:
-      - DIG-658
+      - main
 
 jobs:
   train-model:
@@ -16,7 +16,7 @@ jobs:
           git config --global user.name "Github Actions"
           git fetch --all --unshallow
           git checkout heroku 2>/dev/null || git checkout -b heroku
-          git merge DIG-658 -X theirs --allow-unrelated-histories
+          git merge main -X theirs --allow-unrelated-histories
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
